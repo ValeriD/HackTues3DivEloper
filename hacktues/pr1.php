@@ -50,6 +50,32 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 			document.getElementById("mySidenav").style.width = "0";
 		}
 	</script>
+			<style>
+	#boton2{
+	   background: #ffd633;
+	   
+
+	   -webkit-border-radius: 8;
+	   -moz-border-radius: 8;
+	   border-radius: 8px;
+	   font-family: Arial;
+	   color: black;
+	   font-size: 20px;
+	   padding: 10px 20px 10px 20px;
+	   text-decoration: none;
+	   width: 30%
+	} 
+	</style>
+	
+	<style>
+	#search{
+		margin-top:55px;
+		margin-right:-200px;
+	}
+	#profile{
+		margin-right:-185px;
+	}
+	</style>
 <title>Title</title>
 <script src="js.js"></script>
 
@@ -58,11 +84,19 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 <body background="http://www.bene.be/images/uploads/2012-blog/20120712/images-summer02.png">
 <nav background="http://www.bene.be/images/uploads/2012-blog/20120712/images-summer02.png" style="margin-bottom:0px; height:100px">
   <div class="container-fluid">
+  
     <div class="navbar-header">
       <a class="navbar-brand" href="#"c>
         <img alt="" style="width:150px; height:80px;" src="http://www.ue-varna.bg/Uploads/dmbakalova@ue-varna.bg/Logo_TV_2015.png">
       </a>
     </div>
+	<form class="navbar-form navbar-right" id="search" action="search1.php" method="GET">
+			<div class="form-group">
+			  <input type="text" class="form-control" placeholder="Search"  type="text" name="query">
+			  
+			</div>
+			<button type="submit" class="btn btn-default" style="font-size:15px;cursor:pointer;">Submit</button>
+	</form>
   </div>
 </nav>
 
@@ -79,9 +113,8 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 		  
 		  <div id="mySidenav" class="sidenav">
 			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			  <a href="p1u.php">Начална страница</a>
-			  <a href="#">Услуги</a>
-			  <a href="#">Запитване</a>
+			  <a href="p1.php">Начална страница</a>
+
 			  <a href="#">Картички за рожден ден</a>
 			  <a href="#">Картички за празници</a>
 			  <a href="#">Картички за именни дни</a>
@@ -103,7 +136,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:20px;cursor:pointer">Продукти <span class="caret"></span></a>
 			  <ul class="dropdown-menu">
-				<li><a href="produ.php"><font color="black">Картички</font></a></li>
+				<li><a href="prodr.php"><font color="black">Картички</font></a></li>
 				<li><a href="#"><font color="black">Колажи</font></a></li>
 				<li role="separator" class="divider"></li>
 				<li><a href="#"><font color="black">Направи си сам</font></a></li>
@@ -112,20 +145,15 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 		  </ul>
 		 
 		  <ul class="nav navbar-nav">
-				<li><a></a></li>
+				<li><a href="#">Услуги</a></li>
 		  </ul>
 		  <ul class="nav navbar-nav">
-				<li><a></a></li>
+				<li> <a href="#">Запитване</a></li>
 		  </ul>
-		 <form class="navbar-form navbar-left" action="search1.php" method="GET">
-			<div class="form-group">
-			  <input type="text" class="form-control" placeholder="Search"  type="text" name="query">
-			  
-			</div>
-			<button type="submit" class="btn btn-default" style="font-size:15px;cursor:pointer;">Submit</button>
-		  </form>
+		 
 		</ul>
-		<ul class="nav navbar-nav navbar-right">
+		
+		<ul class="nav navbar-nav navbar-right" id="profile">
 			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
      <span class="glyphicon glyphicon-user"></span>&nbsp;Здравейте! <?php echo $userRow['userName']; ?><span class="caret"></span></a>
@@ -134,6 +162,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
               </ul>
             </li>
           </ul>
+		  
 		</div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
@@ -146,11 +175,17 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 </ul>
 </div>
 <hr style = " background-color: #ffff33; height: 2px; ">
-<div style="margin-left:10%">
+<div style="margin-left:10%; ">
 <h1 style="margin-left:27.5%; margin-top:3%">Pr1</h1>
-<canvas id="myCanvas" width="800px" height="700px" style="border:1px solid #000000; float:left; margin-bottom:40px; margin-right:100px"></canvas>
-<div style="float:left; border:1px solid #000000; width:250px; height:500px; margin-top:100px">
-<p>This is fcking stupid message</p>
+<div  width="800px" height="700px" style="border:5px solid #73AD21; border-radius:5px; float:left; margin-bottom:40px; margin-right:100px">
+
+</div>
+<div align = "center" style="float:left; border:5px solid #73AD21; border-radius:5px; width:250px; height:500px; margin-top:100px; background-color:#ffff33;">
+ <button  type="button" id="boton2" style="height:40px; margin-top:20px; padding:10px 10px 10px 10px">Open</button>
+ <button  type="button" id="boton2" style="height:40px; margin-top:20px; padding:10px 10px 10px 10px">Save</button>
+ <br>
+ <button  type="button" id="boton2" style="height:40px; width:60%; margin-top:20px; padding:10px 10px 10px 10px">Download</button>
+
 </div>
 </div>
 <div id="ad">

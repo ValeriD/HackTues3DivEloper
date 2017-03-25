@@ -51,19 +51,38 @@
 			document.getElementById("mySidenav").style.width = "0";
 		}
 	</script>
+		<style>
+	#search{
+		margin-top:55px;
+		margin-right:-200px;
+	}
+	#profile{
+		margin-right:-185px;
+	}
+	</style>
 <title>Title</title>
 <script src="js.js"></script>
 
 </head>
 
+
+
 <body background="http://www.bene.be/images/uploads/2012-blog/20120712/images-summer02.png">
 <nav background="http://www.bene.be/images/uploads/2012-blog/20120712/images-summer02.png" style="margin-bottom:0px; height:100px">
   <div class="container-fluid">
+  
     <div class="navbar-header">
       <a class="navbar-brand" href="#"c>
         <img alt="" style="width:150px; height:80px;" src="http://www.ue-varna.bg/Uploads/dmbakalova@ue-varna.bg/Logo_TV_2015.png">
       </a>
     </div>
+	<form class="navbar-form navbar-right" id="search" action="search1.php" method="GET">
+			<div class="form-group">
+			  <input type="text" class="form-control" placeholder="Search"  type="text" name="query">
+			  
+			</div>
+			<button type="submit" class="btn btn-default" style="font-size:15px;cursor:pointer;">Submit</button>
+	</form>
   </div>
 </nav>
 
@@ -80,9 +99,8 @@
 		  
 		  <div id="mySidenav" class="sidenav">
 			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			  <a href="p1u.php">Начална страница</a>
-			  <a href="#">Услуги</a>
-			  <a href="#">Запитване</a>
+			  <a href="p1.php">Начална страница</a>
+
 			  <a href="#">Картички за рожден ден</a>
 			  <a href="#">Картички за празници</a>
 			  <a href="#">Картички за именни дни</a>
@@ -100,7 +118,6 @@
 				<li><a></a></li>
 		  </ul>
 	
-
 		  <ul class="nav navbar-nav">
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:20px;cursor:pointer">Продукти <span class="caret"></span></a>
@@ -114,21 +131,15 @@
 		  </ul>
 		 
 		  <ul class="nav navbar-nav">
-				<li><a></a></li>
+				<li><a href="#">Услуги</a></li>
 		  </ul>
 		  <ul class="nav navbar-nav">
-				<li><a></a></li>
+				<li> <a href="#">Запитване</a></li>
 		  </ul>
-		 <form class="navbar-form navbar-left" action="search1.php" method="GET">
-			<div class="form-group">
-			  <input type="text" class="form-control" placeholder="Search"  type="text" name="query">
-			  
-			</div>
-			<button type="submit" class="btn btn-default" style="font-size:15px;cursor:pointer;">Submit</button>
-		  </form>
+		 
 		</ul>
-		  
-	<ul class="nav navbar-nav navbar-right">
+		
+		<ul class="nav navbar-nav navbar-right" id="profile">
 			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
      <span class="glyphicon glyphicon-user"></span>&nbsp;Здравейте! <?php echo $userRow['userName']; ?><span class="caret"></span></a>
@@ -137,10 +148,10 @@
               </ul>
             </li>
           </ul>
+		  
 		</div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
-
 	<nav class="navco" style="margin-top:20px; background-color:#ffff33"><center style="font-size:20px;cursor:pointer">Най-нови</center></nav>
 
 <script src="js/jssor.slider-22.1.8.min.js" type="text/javascript"></script>
