@@ -82,6 +82,7 @@ document.getElementById('file').addEventListener('change', function(e)
 			var offsetY=canvasOffset.top;
 			var txisze;
 			var txfont;
+			var txbin;
 			
 
 			function handleMouseDown(e){
@@ -90,7 +91,7 @@ document.getElementById('file').addEventListener('change', function(e)
 			  $("#downlog").html("Down: "+ canMouseX + " / " + canMouseY);
 
 			  var text=document.getElementById("text").value;
-			  ctx.font = ctx.font = txsize+" "+txfont; ;
+			  ctx.font =txbin+txsize+" "+txfont; 
 			  ctx.fillText(text,canMouseX,canMouseY);
 			}
 						
@@ -108,10 +109,13 @@ function download(){
     }
 
 function changefont(font){
-	txfont = font
+	txfont = font;
 }
 function changesize(tsize){
-	txsize = tsize
+	txsize = tsize;
+}
+function changebin(bin){
+	txbin = bin;
 }
 
 	
